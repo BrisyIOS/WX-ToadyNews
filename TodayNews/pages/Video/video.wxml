@@ -1,0 +1,22 @@
+
+
+<template name="video">
+  <view  class="videoImageViewStyle">
+      {{/* 可以播放的大图 */}}
+      <image class="videoImageStyle" src="{{item.cover}}" mode="scaleToFill"  data-url="{{item.mp4_url}}" catchtap="tapEventHandle"></image>
+      <image class="playBtnStyle" src="../../image/playicon_video_60x60_@2x.png" mode="scaleToFill"></image>
+      {{/* 文本 */}}
+      <view  class="textViewStyle">
+        <text> {{item.title}} </text>
+      </view>
+  </view>
+</template>
+
+
+<!-- 本页面的入口 -->
+<scroll-view class="scrollViewStyle" scroll-y="true" upper-threshold="10" lower-threshold="50" scroll-top="50"  bindscrolltoupper="upperEventHandle" bindscrolltolower="lowerEventHandle" bindscroll="scrollEventHandle">
+  <block wx:for="{{items}}" wx:key="{{item.title}}">
+        {{/* 显示一张可以播放的大图 */}}
+        <template is="video" data="{{item}}"></template>
+  </block>
+</scroll-view>

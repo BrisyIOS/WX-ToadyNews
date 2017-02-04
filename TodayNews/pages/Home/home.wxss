@@ -1,0 +1,114 @@
+
+.scrollViewStyle {
+    flex-direction: column;
+    background-color: #e8e8e8;
+}
+
+.noImageStyle {
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    font-size: 30rpx;
+    height: 100%;
+    margin: 3rpx;
+    padding: 20rpx;
+    line-height: 150%;
+}
+
+.sourceAvatarStyle {
+    display: flex;
+    width: 25rpx;
+    height: 25rpx;
+    border-radius: 12.5rpx;
+}
+
+.noImageLowerLine {
+    display: flex;
+    margin-top: 20rpx;
+    flex-direction: row;
+    color: gray;
+    align-items: center;
+    font-size: 20rpx;
+}
+
+.textStyle {
+    display: flex;
+    margin-left: 8rpx;
+}
+
+.threeImageStyle {
+    display: flex;
+    flex-direction: row;
+}
+
+.threeSmallImageStyle {
+    display: flex;
+    width: 231rpx;
+    height: 130rpx;
+    padding-right: 8rpx;
+}
+
+
+.videoImageStyle {
+    display: flex;
+    position: relative;
+    width: 710rpx;
+    height: 460rpx;
+}
+
+.playBtnStyle {
+    display: flex;
+    position: absolute;
+    width: 120rpx;
+    height: 120rpx;
+    margin-left: 355rpx;
+    margin-top: 230rpx;
+    transform: translate(-50%, -50%);
+}
+
+.durationStyle {
+    display: flex;
+    position: absolute;
+    width: 80rpx;
+    height: 30rpx;
+    font-size: 20rpx;
+    justify-content: center;
+    line-height: 30rpx;
+    background-color: white;
+    border-radius: 15rpx;
+    opacity:0.3;
+    right: 2%;
+    bottom: 2%;
+}
+
+.oneBigImageStyle {
+    display: flex;
+    width: 710rpx;
+    height: 460rpx;
+}
+
+.leftViewStyle {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+
+.rightImageStyle {
+    display: flex;
+    width: 180rpx;
+    height: 120rpx;
+}
+
+.rightImageCellStyle {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    font-size: 30rpx;
+    height: 100%;
+    margin: 3rpx;
+    padding: 20rpx;
+    line-height: 150%;
+}

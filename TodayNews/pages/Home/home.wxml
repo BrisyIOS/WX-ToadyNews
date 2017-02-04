@@ -1,0 +1,231 @@
+
+
+<!-- 模板1： 3张图片 -->
+<template name="threeImage">
+  <view class="noImageStyle" data-url="{{item.url}}" catchtap="tapEventHandle">
+    {{/* 文本内容 */}}
+    <text> {{item.title}} </text>
+    {{/* 3张图片 */}}
+    <view class="threeImageStyle">
+      <view wx:if="{{item.image_list.length > 0}}">
+        <image class="threeSmallImageStyle" mode="scaleToFill" src="{{item.image_list[0].url}}"></image>
+      </view>
+      <view wx:elseif="{{item.image_list.length > 1}}">
+        <image class="threeSmallImageStyle" mode="scaleToFill" src="{{item.image_list[1].url}}"></image>
+      </view>
+      <view wx:elseif="{{item.image_list.length > 2}}">
+        <image class="threeSmallImageStyle" mode="scaleToFill" src="{{item.image_list[2].url}}"></image>
+      </view>
+    </view>
+    {{/* 底部部分 */}}
+    <view class="noImageLowerLine">
+      <view wx:if="{{item.source_avatar.length > 0}}">
+        <image class="sourceAvatarStyle" mode="scaleToFill" src="{{item.source_avatar}}"></image>
+      </view>
+      <view wx:else="{{item.source_avatar.length == 0}}">
+         <image class="sourceAvatarStyle" mode="scaleToFill" src="{{item.media_info.avatar_url}}"></image>
+      </view>
+      <view class="textStyle" wx:if="{{item.source.length > 0}}">
+        <text>{{item.source}}</text>
+      </view>
+      <view class="textStyle" wx:else="{{item.source.length == 0}}">
+        <text>{{item.media_info.name}}</text>
+      </view>
+      <view class="textStyle" wx:if="{{item.comment_count >= 10000}}">
+        <text>{{item.comment_count/10000}}万评论</text>
+      </view>
+      <view class="textStyle" wx:if="{{item.comment_count < 10000}}">
+        <text>{{item.comment_count}}评论</text>
+      </view>
+      <view class="textStyle">
+        <text>{{item.publish_time}}</text>
+      </view>
+    </view>
+  </view>
+</template>
+
+
+
+
+<!-- 模板2： 中间一张可以播放的大图，只有文本 -->
+<template name="bigVieoImage">
+  <view  class="noImageStyle" data-url="{{item.url}}" catchtap="tapEventHandle">
+    {{/* 文本 */}}
+    <text> {{item.title}} </text>
+    {{/* 可以播放的大图 */}}
+    <view class="videoImageStyle">
+      <image class="videoImageStyle" src="{{item.video_detail_info.detail_video_large_image.url}}" mode="scaleToFill"></image>
+      <image class="playBtnStyle" src="../../image/playicon_video_60x60_@2x.png" mode="scaleToFill"></image>
+      <view class="durationStyle">
+        <text>12:18</text>
+      </view>
+    </view>
+    {{/* 底部部分 */}}
+    <view class="noImageLowerLine">
+      <view wx:if="{{item.source_avatar.length > 0}}">
+        <image class="sourceAvatarStyle" mode="scaleToFill" src="{{item.source_avatar}}"></image>
+      </view>
+      <view wx:else="{{item.source_avatar.length == 0}}">
+         <image class="sourceAvatarStyle" mode="scaleToFill" src="{{item.media_info.avatar_url}}"></image>
+      </view>
+      <view class="textStyle" wx:if="{{item.source.length > 0}}">
+        <text>{{item.source}}</text>
+      </view>
+      <view class="textStyle" wx:else="{{item.source.length == 0}}">
+        <text>{{item.media_info.name}}</text>
+      </view>
+      <view class="textStyle" wx:if="{{item.comment_count >= 10000}}">
+        <text>{{item.comment_count/10000}}万评论</text>
+      </view>
+      <view class="textStyle" wx:if="{{item.comment_count < 10000}}">
+        <text>{{item.comment_count}}评论</text>
+      </view>
+      <view class="textStyle">
+        <text>{{item.publish_time}}</text>
+      </view>
+    </view>
+  </view>
+</template>
+
+
+
+
+<!-- 模板3：  只有一张大图片 -->
+<template name="oneBigImage">
+  <view  class="noImageStyle" data-url="{{item.url}}"  catchtap="tapEventHandle">
+    {{/* 文本 */}}
+    <text> {{item.title}} </text>
+    {{/* 一张大图 */}}
+    <view wx:if="{{item.large_image_list.length > 0}}" class="oneBigImageStyle">
+      <image class="oneBigImageStyle" src="{{item.large_image_list[0].url}}" mode="scaleToFill"></image>
+    </view>
+    {{/* 底部部分 */}}
+    <view class="noImageLowerLine">
+      <view wx:if="{{item.source_avatar.length > 0}}">
+        <image class="sourceAvatarStyle" mode="scaleToFill" src="{{item.source_avatar}}"></image>
+      </view>
+      <view wx:else="{{item.source_avatar.length == 0}}">
+         <image class="sourceAvatarStyle" mode="scaleToFill" src="{{item.media_info.avatar_url}}"></image>
+      </view>
+      <view class="textStyle" wx:if="{{item.source.length > 0}}">
+        <text>{{item.source}}</text>
+      </view>
+      <view class="textStyle" wx:else="{{item.source.length == 0}}">
+        <text>{{item.media_info.name}}</text>
+      </view>
+      <view class="textStyle" wx:if="{{item.comment_count >= 10000}}">
+        <text>{{item.comment_count/10000}}万评论</text>
+      </view>
+      <view class="textStyle" wx:if="{{item.comment_count < 10000}}">
+        <text>{{item.comment_count}}评论</text>
+      </view>
+      <view class="textStyle">
+        <text>{{item.publish_time}}</text>
+      </view>
+    </view>
+  </view>
+</template>
+
+
+
+
+<!-- 模板4： 左边文本，右边小图片 -->
+<template name="rightImage">
+  <view class="rightImageCellStyle" data-url="{{item.url}}"  catchtap="tapEventHandle">
+    <view class="leftViewStyle">
+      {{/* 文本 */}}
+      <text> {{item.title}} </text>
+      {{/* 底部部分 */}}
+      <view class="noImageLowerLine">
+        <view wx:if="{{item.source_avatar.length > 0}}">
+          <image class="sourceAvatarStyle" mode="scaleToFill" src="{{item.source_avatar}}"></image>
+        </view>
+        <view wx:else="{{item.source_avatar.length == 0}}">
+          <image class="sourceAvatarStyle" mode="scaleToFill" src="{{item.media_info.avatar_url}}"></image>
+        </view>
+        <view class="textStyle" wx:if="{{item.source.length > 0}}">
+          <text>{{item.source}}</text>
+        </view>
+        <view class="textStyle" wx:else="{{item.source.length == 0}}">
+          <text>{{item.media_info.name}}</text>
+        </view>
+        <view class="textStyle" wx:if="{{item.comment_count >= 10000}}">
+          <text>{{item.comment_count/10000}}万评论</text>
+        </view>
+        <view class="textStyle" wx:if="{{item.comment_count < 10000}}">
+          <text>{{item.comment_count}}评论</text>
+        </view>
+        <view class="textStyle">
+          <text>{{item.publish_time}}</text>
+        </view>
+      </view>
+    </view>
+    {{/* 右边小图片 */}}
+    <view class='rightImageStyle' wx:if='{{item.middle_image != null}}'>
+      <image class='rightImageStyle' src="{{item.middle_image.url}}" mode="scaleToFill"></image>
+    </view> 
+  </view>
+</template>
+
+
+
+
+<!-- 模板5： 没有图片，只有文本 -->
+<template name="noImage">
+  <view  class="noImageStyle" data-url="{{item.url}}"  catchtap="tapEventHandle">
+    <text> {{item.title}} </text>
+    <view class="noImageLowerLine">
+      <view wx:if="{{item.source_avatar.length > 0}}">
+        <image class="sourceAvatarStyle" mode="scaleToFill" src="{{item.source_avatar}}"></image>
+      </view>
+      <view wx:else="{{item.source_avatar.length == 0}}">
+         <image class="sourceAvatarStyle" mode="scaleToFill" src="{{item.media_info.avatar_url}}"></image>
+      </view>
+      <view class="textStyle" wx:if="{{item.source.length > 0}}">
+        <text>{{item.source}}</text>
+      </view>
+      <view class="textStyle" wx:else="{{item.source.length == 0}}">
+        <text>{{item.media_info.name}}</text>
+      </view>
+      <view class="textStyle" wx:if="{{item.comment_count >= 10000}}">
+        <text>{{item.comment_count/10000}}万评论</text>
+      </view>
+      <view class="textStyle" wx:if="{{item.comment_count < 10000}}">
+        <text>{{item.comment_count}}评论</text>
+      </view>
+      <view class="textStyle">
+        <text>{{item.publish_time}}</text>
+      </view>
+    </view>
+  </view>
+</template>
+
+
+
+<!-- 本页面的入口 -->
+<scroll-view class="scrollViewStyle" scroll-y="true" upper-threshold="10" lower-threshold="50" scroll-top="50"  bindscrolltoupper="upperEventHandle" bindscrolltolower="lowerEventHandle" bindscroll="scrollEventHandle">
+  <block wx:for="{{items}}" wx:key="{{item.item_id}}">
+        {{/* 有三张图的情况 */}}
+        <view wx:if="{{item.cellType == 'threeImageType'}}">
+          <template is="threeImage" data="{{item}}"></template>
+        </view>
+        {{/* 显示一张可以播放的大图 */}}
+        <view wx:if="{{item.cellType == 'bigVideoImageType'}}">
+           <template is="bigVieoImage" data="{{item}}"></template>
+        </view>
+        {{/* 显示一张大图 */}}
+        <view wx:if="{{item.cellType == 'oneBigImageType'}}">
+          <template is="oneBigImage" data="{{item}}"></template>
+        </view>
+        {{/* 右边显示一张图片 */}}
+        <view wx:if="{{item.cellType == 'rightImageType'}}">
+          <template is="rightImage" data="{{item}}"></template>
+        </view>
+        {{/* 没有图片 */}}
+        <view wx:if="{{item.cellType == 'noImageType'}}">
+          <template is="noImage" data="{{item}}"></template>
+        </view>
+  </block>
+</scroll-view>
+
+

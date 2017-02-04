@@ -1,0 +1,3 @@
+<view class="videoDetailViewStyle">
+  <video class="videoDetailStyle" id="playvideo" src="{{mp4_url}}" autoplay="true" controls="true" objectFit="fill"></video>
+</view>
