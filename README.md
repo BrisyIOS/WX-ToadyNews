@@ -20,12 +20,12 @@
 1、下拉刷新只能在cell没有占满屏幕的时候，点击cell以外的空白区域才有效，我猜测应该是响应者链的问题；</br>
 2、上啦加载更多，太过于灵敏，这个我猜测应该是小程序自身的问题。</br>
 3、新闻详情页面是一个网页，但是小程序不支持HTML，所有我用的是wxParse 这个第三方，但是这个只能用在简单的HTML上，今日头条的详情HTML太过于复杂，所以展示内容比较杂乱，跪求热心大神帮忙；</br>
-4、今日头条Swift版[https://github.com/BrisyIOS/TodayNewsSwift3.0](), 这个是我初学Swift的时候写的，可供新手学习；</br>
+4、今日头条Swift版[Swift版今日头条](https://github.com/BrisyIOS/TodayNewsSwift3.0), 这个是我初学Swift的时候写的，可供新手学习；</br>
 </br>
 
 
 ##运行效果
-demo连接：[https://github.com/BrisyIOS/WX-ToadyNews]();</br>
+demo连接：[张旭github](https://github.com/BrisyIOS/WX-ToadyNews);</br>
 ![image text](https://dn-otjqboap.qbox.me/4ea23255b72eb9c0021a.gif);
 
 
