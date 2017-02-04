@@ -57,6 +57,16 @@ Page({
         })
     },
 
+    // 下拉刷新
+    upperEventHandle: function() {
+        console.log("--------upperEventHandle--------");
+    },
+
+    // 上啦加载更多
+    lowerEventHandle: function() {
+        console.log("---------lowerEventHandle-----------");
+    },
+
     // 页面显示的时候调用
     onShow: function() {
         console.log("页面显示的时候调用");

@@ -1,7 +1,7 @@
 ##运行环境
 开发工具：微信web开发者工具 </br>
 版本： 微信web开发者工具 v0.12.130400 </br>
-适配： 适用于所有微信web开发者工具中模拟器的机型 </br>
+适配： 适用于微信web开发者工具中所有模拟器的机型 </br>
 </br>
 
 
@@ -22,11 +22,20 @@
 3、新闻详情页面是一个网页，但是小程序不支持HTML，所有我用的是wxParse 这个第三方，但是这个只能用在简单的HTML上，今日头条的详情HTML太过于复杂，所以展示内容比较杂乱，跪求热心大神帮忙；</br>
 4、今日头条Swift版[Swift版今日头条](https://github.com/BrisyIOS/TodayNewsSwift3.0), 这个是我初学Swift的时候写的，可供新手学习；</br>
 </br>
+</br>
+
+
+##解决的问题
+1、由于我当时看小程序文档的时候，漏看了一些东西，导致onPullDownRefresh方法不能触发；后来发现犯了一个错误，我居然没有给scroll-view设置高度，导致scroll-view在回滚的时候，不能触发onPullDownRfresh；</br>
+2、onPullDownRefresh是下拉刷新，在scroll-view回滚的时候不能触发，居然用了scroll-view,就应该通过bindscrolltoupper绑定下拉刷新方法，bindscrolltolower绑定上啦加载更多方法。于是就能很好的解决上面刷新的问题了。</br>
+</br>
+
 
 
 ##运行效果
 demo连接：[张旭github](https://github.com/BrisyIOS/WX-ToadyNews);</br>
 ![image text](https://dn-otjqboap.qbox.me/4ea23255b72eb9c0021a.gif);
+
 
 
 

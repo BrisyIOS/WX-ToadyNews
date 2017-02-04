@@ -165,6 +165,7 @@ Page({
         },
         fail: function(error) {
             // fail
+            failureCallBack(error);
         },
         complete: function() {
             // complete
@@ -188,17 +189,8 @@ Page({
         console.log("页面隐藏的时候调用");
     },
 
-
+    // 上啦刷新
     upperEventHandle: function() {
-        console.log("--------upper-----------");
-    },
-
-    lowerEventHandle: function() {
-        console.log("---------lower---------");
-    },
-
-    onPullDownRefresh: function() {
-        console.log("------------onPullDownRefresh--------------");
         // 显示loading
         wx.showToast({
         title: '刷新中',
@@ -228,8 +220,7 @@ Page({
             icon: 'success',
             duration: 500
             });
-            // 停止刷新
-            wx.stopPullDownRefresh();
+            
 
         }, function failureCallBack(error) {
             console.log(error);
@@ -242,8 +233,7 @@ Page({
         });
     },
 
-    onReachBottom: function() {
-        console.log("-----------onReachBottom-------------");
+    lowerEventHandle: function() {
         wx.showToast({
         title: '刷新中',
         icon: 'loading',

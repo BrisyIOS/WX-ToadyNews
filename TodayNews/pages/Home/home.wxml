@@ -203,7 +203,7 @@
 
 
 <!-- 本页面的入口 -->
-<scroll-view class="scrollViewStyle" scroll-y="true" upper-threshold="10" lower-threshold="50" scroll-top="50"  bindscrolltoupper="upperEventHandle" bindscrolltolower="lowerEventHandle" bindscroll="scrollEventHandle">
+<scroll-view class="scrollViewStyle" scroll-y="true" upper-threshold="2" lower-threshold="10" scroll-top="50"  bindscrolltoupper="upperEventHandle" bindscrolltolower="lowerEventHandle">
   <block wx:for="{{items}}" wx:key="{{item.item_id}}">
         {{/* 有三张图的情况 */}}
         <view wx:if="{{item.cellType == 'threeImageType'}}">

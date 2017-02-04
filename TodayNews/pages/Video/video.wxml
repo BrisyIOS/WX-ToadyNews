@@ -14,7 +14,7 @@
 
 
 <!-- 本页面的入口 -->
-<scroll-view class="scrollViewStyle" scroll-y="true" upper-threshold="10" lower-threshold="50" scroll-top="50"  bindscrolltoupper="upperEventHandle" bindscrolltolower="lowerEventHandle" bindscroll="scrollEventHandle">
+<scroll-view class="scrollViewStyle" scroll-y="true" upper-threshold="2" lower-threshold="10" scroll-top="50"  bindscrolltoupper="upperEventHandle" bindscrolltolower="lowerEventHandle">
   <block wx:for="{{items}}" wx:key="{{item.title}}">
         {{/* 显示一张可以播放的大图 */}}
         <template is="video" data="{{item}}"></template>

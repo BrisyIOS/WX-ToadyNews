@@ -2,6 +2,7 @@
 .scrollViewStyle {
     flex-direction: column;
     background-color: #e8e8e8;
+    height: 1108rpx;
 }
 
 .noImageStyle {
